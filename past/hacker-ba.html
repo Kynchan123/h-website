@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Access</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: "Courier New", monospace;
+            text-align: center;
+            padding: 50px;
+        }
+        #terminal {
+            background: black;
+            color: green;
+            padding: 20px;
+            width: 80%;
+            margin: auto;
+            border-radius: 10px;
+            text-align: left;
+            white-space: pre-wrap;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function startHacking() {
+            let name = prompt("Enter your username:");
+            if (!name || name.trim() === "") {
+                alert("Access Denied: No name entered.");
+                return;
+            }
+
+            document.body.innerHTML = '<h2>Initializing Secure Access...</h2><pre id="terminal"></pre>';
+            let terminal = document.getElementById("terminal");
+
+            let lines = [
+                "[✓] Connecting to secure server...",
+                "[✓] Bypassing firewall...",
+                "[✓] Accessing encrypted files...",
+                "[✓] Extracting sensitive data...",
+                "[✓] Verifying user identity...",
+                "[X] ERROR: Unauthorized Access Detected!",
+                "[!] System lockdown initiated...",
+                `ACCESS DENIED, ${name.toUpperCase()}!`
+            ];
+
+            let index = 0;
+            function typeLines() {
+                if (index < lines.length) {
+                    terminal.innerHTML += lines[index] + "\n";
+                    index++;
+                    setTimeout(typeLines, 1000);
+                } else {
+                    setTimeout(() => {
+                        window.location.href = "https://www.youtube.com/watch?v=BCQMBWU_juY"; // bobo
+                    }, 3000);
+                }
+            }
+            typeLines();
+        }
+    </script>
+</head>
+<body onload="startHacking()">
+</body>
+</html>
